@@ -1,0 +1,36 @@
+galaxy_info:
+  author: JoseCarlosGarcia95
+  description: Hidra Exporter Ansible Role to set up and configure Hidra for monitoring samples.
+  company: HidraCloud
+
+  # Versions of Ansible this role is compatible with:
+  min_ansible_version: "2.9"
+
+  # Platforms the role will work on:
+  platforms:
+    - name: EL
+      versions:
+        - "7"
+        - "8"
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+        - groovy
+
+  galaxy_tags:
+    - monitoring
+    - hidra
+    - exporter
+
+  license: GPL3
+
+galaxy_tags:
+  - monitoring
+  - hidra
+  - exporter
