@@ -1,0 +1,22 @@
+namespace: hidracloud
+name: hidra_collection
+version: 1.0.0
+readme: README.md
+authors:
+  - José Carlos García <hola@josecarlos.me>
+description: A collection for Hidra, the online sentinel for URL monitoring.
+license_file: LICENSE
+tags:
+  - monitoring
+  - hidra
+  - exporter
+dependencies: {}
+
+repository: https://github.com/hidracloud/ansible-role-hidra
+documentation: https://github.com/hidracloud/ansible-role-hidra
+homepage: https://hidra.cloud
+issues: https://github.com/hidracloud/ansible-role-hidra/issues
+
+build_ignore:
+  - .git
+  - .github
