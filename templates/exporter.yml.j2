@@ -1,0 +1,38 @@
+log_level: "{{ hidra_log_level }}"
+
+http_server:
+  listen_address: "{{ hidra_http_listen_address }}"
+
+samples_path: "{{ hidra_samples_path }}"
+
+scheduler:
+  refresh_samples_interval: "{{ hidra_refresh_samples_interval }}"
+  enqueue_samples_interval: "{{ hidra_enqueue_samples_interval }}"
+  gc_interval: "{{ hidra_gc_interval }}"
+
+basic_auth:
+  enabled: "{{ hidra_basic_auth_enabled }}"
+  username: "{{ hidra_basic_auth_username }}"
+  password: "{{ hidra_basic_auth_password }}"
+
+worker:
+  parallel_jobs: "{{ hidra_worker_parallel_jobs }}"
+  max_queue_size: "{{ hidra_max_queue_size }}"
+  sleep_between_jobs: "{{ hidra_sleep_between_jobs }}"
+
+report:
+  enabled: "{{ hidra_report_enabled }}"
+  s3:
+    enabled: "{{ hidra_s3_enabled }}"
+    bucket: "{{ hidra_s3_bucket }}"
+    region: "{{ hidra_s3_region }}"
+    access_key_id: "{{ hidra_s3_access_key_id }}"
+    secret_access_key: "{{ hidra_s3_secret_access_key }}"
+    endpoint: "{{ hidra_s3_endpoint }}"
+    use_ssl: "{{ hidra_s3_use_ssl }}"
+  callback:
+    enabled: "{{ hidra_callback_enabled }}"
+    url: "{{ hidra_callback_url }}"
+
+usage:
+  enabled: "{{ hidra_usage_enabled }}"

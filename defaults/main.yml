@@ -1,0 +1,31 @@
+_hidra_exporter_system_group: hidra
+_hidra_exporter_system_user: hidra
+_hidra_exporter_binary_install_dir: /usr/local/bin
+hidra_exporter_binary_local_dir: ""
+hidra_exporter_version: "3.2.0"
+go_arch: "amd64"
+
+# Hidra exporter configuration
+hidra_log_level: info
+hidra_http_listen_address: :19090
+hidra_samples_path: /etc/hidra_exporter/samples
+hidra_refresh_samples_interval: 60s
+hidra_enqueue_samples_interval: 5s
+hidra_gc_interval: 5m
+hidra_basic_auth_enabled: false
+hidra_basic_auth_username: prometheus
+hidra_basic_auth_password: prometheus
+hidra_worker_parallel_jobs: 16
+hidra_max_queue_size: 1000
+hidra_sleep_between_jobs: 1s
+hidra_report_enabled: false
+hidra_s3_enabled: false
+hidra_s3_bucket: hidra-reports
+hidra_s3_region: ""
+hidra_s3_access_key_id: hidratest
+hidra_s3_secret_access_key: hidratest
+hidra_s3_endpoint: minio:9000
+hidra_s3_use_ssl: false
+hidra_callback_enabled: false
+hidra_callback_url: http://localhost:19091
+hidra_usage_enabled: true

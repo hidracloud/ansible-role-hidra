@@ -1,0 +1,57 @@
+---
+- name: Copy the hidra_exporter systemd service file
+  template:
+    src: hidra_exporter.service.j2
+    dest: /etc/systemd/system/hidra_exporter.service
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart hidra_exporter
+
+- name: Create hidra_exporter config directory
+  file:
+    path: "/etc/hidra_exporter"
+    state: directory
+    owner: root
+    group: root
+    mode: u+rwX,g+rwX,o=rX
+
+- name: Create /etc/hidra_exporter/samples
+  file:
+    path: "/etc/hidra_exporter/samples"
+    state: directory
+    owner: root
+    group: root
+    mode: u+rwX,g+rwX,o=rX
+
+- name: Set net.ipv4.ping_group_range="0 2147483647"
+  sysctl:
+    name: "net.ipv4.ping_group_range"
+    value: "0 2147483647"
+    state: present
+    reload: yes
+
+- name: Copy samples folder to /etc/hidra_exporter/samples
+  synchronize:
+    src: samples/
+    dest: /etc/hidra_exporter/samples
+    copy_links: yes
+    delete: yes
+    recursive: yes
+  notify: restart hidra_exporter
+
+- name: Copy the hidra_exporter config file
+  template:
+    src: exporter.yml.j2
+    dest: /etc/hidra_exporter/config.yml
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart hidra_exporter
+
+- name: Enable and start hidra_exporter
+  service:
+    name: hidra_exporter
+    enabled: yes
+    state: started
+  notify: restart hidra_exporter

@@ -1,0 +1,7 @@
+---
+- name: restart hidra_exporter
+  become: true
+  systemd:
+    daemon_reload: true
+    name: hidra_exporter
+    state: restarted
