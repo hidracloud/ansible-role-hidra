@@ -2,8 +2,7 @@
   name: Push to galaxy
   
   on:
-    - push
-  
+    - push  
   jobs:
     build:
       runs-on: ubuntu-latest
